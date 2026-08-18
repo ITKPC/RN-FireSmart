@@ -17,13 +17,20 @@ button, select, input { font: inherit; }
   gap: 2rem;
   align-items: flex-end;
   padding: 2.5rem clamp(1rem, 4vw, 4rem);
-  background: linear-gradient(135deg, #5e231a, #8a3c26);
   color: white;
+  transition: background .2s ease;
 }
+.hero.stage-normal { background: linear-gradient(135deg, #0b6fa4, #178bc4); }
+.hero.stage-elevated { background: linear-gradient(135deg, #c89b00, #e0b31c); color: #2f2600; }
+.hero.stage-alert { background: linear-gradient(135deg, #c86200, #e47c12); }
+.hero.stage-order { background: linear-gradient(135deg, #9f1f1f, #c9352d); }
+.hero.stage-evacuated { background: linear-gradient(135deg, #4c4f70, #676b91); }
+.hero.stage-stand-down { background: linear-gradient(135deg, #2f7d32, #4e9a4f); }
 .hero h1 { margin: .2rem 0 .6rem; font-size: clamp(2rem, 5vw, 4rem); line-height: .95; }
 .hero-copy { max-width: 46rem; margin: 0; opacity: .9; font-size: 1.05rem; }
 .eyebrow { margin: 0; text-transform: uppercase; letter-spacing: .14em; font-weight: 800; font-size: .72rem; }
-.stage-badge { min-width: 260px; padding: 1rem 1.2rem; border-radius: 1rem; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); }
+.stage-badge { min-width: 260px; padding: 1rem 1.2rem; border-radius: 1rem; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28); }
+.hero.stage-elevated .stage-badge { background: rgba(255,255,255,.34); border-color: rgba(47,38,0,.18); }
 .stage-badge span { display: block; font-size: .78rem; opacity: .8; margin-bottom: .25rem; }
 .stage-badge strong { display: block; font-size: 1rem; }
 
@@ -34,11 +41,40 @@ main { width: min(1180px, calc(100% - 2rem)); margin: 1rem auto 4rem; }
 .muted { color: #746b63; margin: 0; max-width: 33rem; font-size: .92rem; }
 
 .stage-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
-.stage-card { text-align: left; border: 1px solid #d9d1c7; background: #fbf9f5; border-radius: .85rem; padding: 1rem; cursor: pointer; transition: .15s ease; color: #2d2a26; }
-.stage-card:hover { transform: translateY(-1px); border-color: #9f705f; }
-.stage-card.selected { border: 2px solid #7a2e1f; background: #f8eee8; }
+.stage-card {
+  text-align: left;
+  border: 1px solid #d9d1c7;
+  background: #fbf9f5;
+  border-radius: .85rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: .15s ease;
+  color: #2d2a26;
+  border-left-width: .4rem;
+}
+.stage-card:hover { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(40,30,20,.08); }
+.stage-card.stage-normal { border-left-color: #178bc4; }
+.stage-card.stage-elevated { border-left-color: #e0b31c; }
+.stage-card.stage-alert { border-left-color: #e47c12; }
+.stage-card.stage-order { border-left-color: #c9352d; }
+.stage-card.stage-evacuated { border-left-color: #676b91; }
+.stage-card.stage-stand-down { border-left-color: #4e9a4f; }
+.stage-card.selected.stage-normal { border-color: #178bc4; background: #eef8fc; }
+.stage-card.selected.stage-elevated { border-color: #d6aa12; background: #fff8d9; }
+.stage-card.selected.stage-alert { border-color: #df7410; background: #fff1e2; }
+.stage-card.selected.stage-order { border-color: #bf3028; background: #fde9e7; }
+.stage-card.selected.stage-evacuated { border-color: #60658c; background: #f0f1f8; }
+.stage-card.selected.stage-stand-down { border-color: #458c47; background: #edf7ed; }
 .stage-card strong { display: block; margin-bottom: .35rem; }
 .stage-card span { display: block; color: #6f665f; font-size: .88rem; line-height: 1.4; }
+
+.action-panel { border-top-width: .45rem; }
+.action-panel.stage-normal { border-top-color: #178bc4; }
+.action-panel.stage-elevated { border-top-color: #e0b31c; }
+.action-panel.stage-alert { border-top-color: #e47c12; }
+.action-panel.stage-order { border-top-color: #c9352d; }
+.action-panel.stage-evacuated { border-top-color: #676b91; }
+.action-panel.stage-stand-down { border-top-color: #4e9a4f; }
 
 .task-list { display: grid; gap: .55rem; }
 .task-row { display: flex; gap: .75rem; align-items: flex-start; padding: .85rem 1rem; border-radius: .75rem; background: #f8f5f0; }

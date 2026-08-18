@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import './evacuation-plan.css'
 
-type RouteId = 'EAST' | 'SOUTHEAST' | 'NORTH' | 'NORTHWEST' | 'SOUTH' | 'SOUTHWEST_5A' | 'MERRITT_PRINCETON'
+type RouteId = 'EAST' | 'SOUTHEAST' | 'NORTH' | 'NORTHWEST' | 'WEST_WHISTLER' | 'SOUTH' | 'SOUTHWEST_5A' | 'MERRITT_PRINCETON'
 type StayType = 'RV' | 'HOTEL' | 'STOP'
 type StayStatus = 'Not called' | 'Available' | 'Full' | 'No answer' | 'Unavailable'
 
@@ -108,6 +108,21 @@ const routes: RoutePlan[] = [
       ]},
       { name: 'Williams Lake', stays: [] },
       { name: 'Quesnel / Prince George', note: 'Farther north fallback.', stays: [] },
+    ],
+  },
+  {
+    id: 'WEST_WHISTLER', shortName: 'West / Whistler back route', highway: 'Hwy 1 / Hwy 99',
+    corridor: 'Kamloops → Cache Creek → Pavilion → Lillooet → Duffey Lake Road → Pemberton → Whistler',
+    guidance: 'A distinct west/southwest escape corridor through Lillooet and the Sea-to-Sky. Treat the Duffey Lake section as an alternate for the motorhome, not a preferred RV route.',
+    branchNote: 'Highway 99 between Lillooet and Pemberton is steep and mountainous with narrow sections and sharp curves. Check DriveBC immediately before committing to this corridor and confirm it is appropriate for the RV.',
+    towns: [
+      { name: 'Cache Creek', note: 'Decision point: continue north on Hwy 97 or turn onto Hwy 99 toward Pavilion and Lillooet.', stays: [
+        { name: 'Cache Creek Campground & RV Park', type: 'RV', pet: 'Pet friendly.', rv: 'RV park on the Trans-Canada.', url: 'https://cachecreekcampground.com/' },
+        { name: 'Sandman Inn Cache Creek', type: 'HOTEL', pet: 'Pet-friendly rooms.', url: 'https://www.sandmanhotels.com/cache-creek/amenities/pet-friendly-hotel' },
+      ]},
+      { name: 'Lillooet', note: 'Last major town before the Duffey Lake section toward Pemberton.', stays: [] },
+      { name: 'Pemberton', note: 'First major community after Duffey Lake Road; continue south on Hwy 99 toward Whistler only if safe.', stays: [] },
+      { name: 'Whistler', note: 'Sea-to-Sky destination/fallback; accommodation and RV options still to verify.', stays: [] },
     ],
   },
   {

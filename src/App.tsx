@@ -10,7 +10,7 @@ const stages: { id: Stage; label: string; description: string }[] = [
   { id: 'ALERT', label: 'Evacuation Alert', description: 'Load the RV and person-bound gear so leaving is immediate.' },
   { id: 'ORDER', label: 'Evacuation Order / Leave Now', description: 'People, Tucker, keys, phones, duffles, then leave.' },
   { id: 'EVACUATED', label: 'Evacuated', description: 'Track safety, location, expenses, and what left the property.' },
-  { id: 'STAND_DOWN', label: 'Stand Down', description: 'Deliberately unwind or retain preparations after the threat passes.' },
+  { id: 'STAND_DOWN', label: 'Stand Down', description: 'Threat has passed; deliberately unwind or retain preparations.' },
 ]
 
 const goBoxes = [
@@ -86,6 +86,10 @@ const stageTasks: Record<Stage, string[]> = {
   ],
 }
 
+function stageClass(stage: Stage) {
+  return `stage-${stage.toLowerCase().replace('_', '-')}`
+}
+
 function readStage(): Stage {
   const saved = localStorage.getItem('rn-firesmart-stage') as Stage | null
   return saved && stages.some((stage) => stage.id === saved) ? saved : 'NORMAL'
@@ -122,13 +126,13 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <header className="hero">
+      <header className={`hero ${stageClass(stage)}`}>
         <div>
           <p className="eyebrow">RN-FireSmart</p>
           <h1>Household wildfire readiness</h1>
           <p className="hero-copy">Know what is ready, what moves next, and what leaves with whom.</p>
         </div>
-        <div className={`stage-badge stage-${stage.toLowerCase()}`}>
+        <div className="stage-badge">
           <span>Current stage</span>
           <strong>{currentStage.label}</strong>
         </div>
@@ -148,7 +152,7 @@ export default function App() {
             {stages.map((item) => (
               <button
                 key={item.id}
-                className={`stage-card ${stage === item.id ? 'selected' : ''}`}
+                className={`stage-card ${stageClass(item.id)} ${stage === item.id ? 'selected' : ''}`}
                 onClick={() => setStage(item.id)}
               >
                 <strong>{item.label}</strong>
@@ -158,7 +162,7 @@ export default function App() {
           </div>
         </section>
 
-        <section className="panel">
+        <section className={`panel action-panel ${stageClass(stage)}`}>
           <div className="section-heading">
             <div>
               <p className="eyebrow">2. Do now</p>

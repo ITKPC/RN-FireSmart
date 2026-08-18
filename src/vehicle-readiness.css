@@ -1,0 +1,24 @@
+.vehicle-page { min-height: 100vh; background: #f3efe8; color: #26231f; }
+.vehicle-hero { display: flex; justify-content: space-between; gap: 2rem; align-items: flex-end; padding: 2rem clamp(1rem,4vw,4rem); background: linear-gradient(135deg,#314b63,#51779a); color: white; }
+.vehicle-hero h1 { margin: .2rem 0 .5rem; font-size: clamp(2.4rem,6vw,4.8rem); line-height: .95; }
+.vehicle-hero p { margin: 0; max-width: 46rem; line-height: 1.45; opacity: .92; }
+.vehicle-kicker { margin: 0; text-transform: uppercase; letter-spacing: .13em; font-size: .7rem; font-weight: 850; }
+.vehicle-score { min-width: 230px; padding: 1rem 1.1rem; border: 1px solid rgba(255,255,255,.28); background: rgba(255,255,255,.12); border-radius: 1rem; }
+.vehicle-score span, .vehicle-score small { display: block; }
+.vehicle-score strong { display: block; font-size: 2.1rem; line-height: 1; margin: .2rem 0 .3rem; }
+.vehicle-main { width: min(1050px,calc(100% - 2rem)); margin: 1rem auto 4rem; }
+.vehicle-panel { background: white; border: 1px solid #ddd5cb; border-radius: 1rem; padding: clamp(1rem,3vw,2rem); margin-bottom: 1rem; box-shadow: 0 8px 30px rgba(75,48,30,.06); }
+.vehicle-section-heading { display: flex; justify-content: space-between; gap: 2rem; align-items: flex-end; margin-bottom: 1rem; }
+.vehicle-section-heading h2, .vehicle-note-panel h2 { margin: .2rem 0 0; }
+.vehicle-section-heading > p { margin: 0; color: #6f675f; max-width: 32rem; line-height: 1.4; }
+.vehicle-progress { height: .6rem; background: #e8e5e1; border-radius: 999px; overflow: hidden; margin-bottom: 1rem; }
+.vehicle-progress span { display: block; height: 100%; background: #3d7c50; border-radius: inherit; }
+.vehicle-kit-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .6rem; }
+.vehicle-kit-row { display: flex; gap: .75rem; align-items: flex-start; padding: .85rem .95rem; background: #f7f5f1; border: 1px solid #e9e3da; border-radius: .75rem; line-height: 1.35; cursor: pointer; }
+.vehicle-kit-row input { margin-top: .15rem; width: 1.15rem; height: 1.15rem; accent-color: #3d7c50; }
+.vehicle-kit-row.done { background: #edf6ef; border-color: #bdd9c2; }
+.vehicle-note-panel { border-top: .4rem solid #51779a; }
+.vehicle-note-panel p { color: #5f5851; line-height: 1.5; }
+.vehicle-source-note { text-align: center; color: #746b63; font-size: .78rem; }
+@media (max-width: 760px) { .vehicle-hero, .vehicle-section-heading { flex-direction: column; align-items: flex-start; } .vehicle-score { width: 100%; } .vehicle-kit-list { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .vehicle-main { width: calc(100% - .8rem); } .vehicle-hero { padding: 1.25rem .8rem; } }

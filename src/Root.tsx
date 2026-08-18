@@ -2,9 +2,10 @@ import { useState } from 'react'
 import App from './App'
 import HomeFireSmart from './HomeFireSmart'
 import VehicleReadiness from './VehicleReadiness'
+import EvacuationPlan from './EvacuationPlan'
 import './home-firesmart.css'
 
-type Area = 'readiness' | 'vehicles' | 'home'
+type Area = 'readiness' | 'vehicles' | 'plan' | 'home'
 
 export default function Root() {
   const [area, setArea] = useState<Area>('readiness')
@@ -21,6 +22,9 @@ export default function Root() {
             <button className={area === 'vehicles' ? 'active' : ''} onClick={() => setArea('vehicles')}>
               Vehicles
             </button>
+            <button className={area === 'plan' ? 'active' : ''} onClick={() => setArea('plan')}>
+              Evacuation Plan
+            </button>
             <button className={area === 'home' ? 'active' : ''} onClick={() => setArea('home')}>
               Home FireSmart
             </button>
@@ -29,6 +33,7 @@ export default function Root() {
       </nav>
       {area === 'readiness' && <App />}
       {area === 'vehicles' && <VehicleReadiness />}
+      {area === 'plan' && <EvacuationPlan />}
       {area === 'home' && <HomeFireSmart />}
     </div>
   )

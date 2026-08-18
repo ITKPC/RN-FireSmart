@@ -9,6 +9,7 @@ type StayOption = {
   name: string
   type: StayType
   phone: string
+  address: string
   verifiedOn: string
   pet?: string
   rv?: string
@@ -29,16 +30,16 @@ const routes: RoutePlan[] = [
     towns: [
       { name: 'Chase', note: 'No current Tucker-friendly overnight accommodation/RV fit has been verified for us yet.', stays: [] },
       { name: 'Salmon Arm', stays: [
-        { name: 'Glen Echo Resorts', type: 'RV', phone: '250-832-5973', verifiedOn: VERIFIED, pet: 'Pet-friendly amenities and dog park.', rv: 'RV sites.', url: 'https://www.glenechoresorts.com/' },
+        { name: 'Glen Echo Resorts', type: 'RV', phone: '250-832-5973', address: '6592 Trans Canada Hwy NW, Salmon Arm, BC V1E 3A2', verifiedOn: VERIFIED, pet: 'Pet-friendly amenities and dog park.', rv: 'RV sites.', url: 'https://www.glenechoresorts.com/' },
       ]},
       { name: 'Sicamous', note: 'Hwy 97A junction.', stays: [
-        { name: 'Best Western Sicamous Inn', type: 'HOTEL', phone: '250-836-4117', verifiedOn: VERIFIED, pet: 'Pet-friendly rooms available.', rv: 'Large complimentary parking area; confirm motorhome fit when calling.', url: 'https://www.sicamousinn.ca/' },
+        { name: 'Best Western Sicamous Inn', type: 'HOTEL', phone: '250-836-4117', address: '806 Trans Canada Highway E, Sicamous, BC V0E 2V0', verifiedOn: VERIFIED, pet: 'Pet-friendly rooms available.', rv: 'Large complimentary parking area; confirm motorhome fit when calling.', url: 'https://www.sicamousinn.ca/' },
       ]},
       { name: 'Revelstoke', stays: [
-        { name: 'The Stoke Hotel', type: 'HOTEL', phone: '250-837-5221', verifiedOn: VERIFIED, pet: 'Pet-friendly hotel.', url: 'https://www.stokehotel.ca/' },
+        { name: 'The Stoke Hotel', type: 'HOTEL', phone: '250-837-5221', address: '1911 Fraser Drive, Revelstoke, BC V0E 2S0', verifiedOn: VERIFIED, pet: 'Pet-friendly hotel.', url: 'https://www.stokehotel.ca/' },
       ]},
       { name: 'Golden', stays: [
-        { name: 'Golden Municipal Campground & RV Park', type: 'RV', phone: '250-344-5412', verifiedOn: VERIFIED, pet: 'Pet stays listed.', rv: '72 sites with power; sani-station, showers and laundry.', url: 'https://www.golden.ca/recreation-services/facilities/golden-municipal-campground-rv-park' },
+        { name: 'Golden Municipal Campground & RV Park', type: 'RV', phone: '250-344-5412', address: '1411 9th Street South, Golden, BC', verifiedOn: VERIFIED, pet: 'Pet stays listed.', rv: '72 sites with power; sani-station, showers and laundry.', url: 'https://www.golden.ca/recreation-services/facilities/golden-municipal-campground-rv-park' },
       ]},
     ],
   },
@@ -50,22 +51,22 @@ const routes: RoutePlan[] = [
     towns: [
       { name: 'Monte Creek', note: 'Transit point. No verified overnight accommodation/RV fit for us yet.', stays: [] },
       { name: 'Falkland', stays: [
-        { name: 'Pillar Lake Resort', type: 'RV', phone: '250-379-2623', verifiedOn: VERIFIED, pet: 'Pets welcome.', rv: 'RV sites with electrical hookups and sani-dump.', url: 'https://www.pillarlake.com/' },
+        { name: 'Pillar Lake Resort', type: 'RV', phone: '250-379-2623', address: '4745 Chase Falkland Road, Falkland, BC V0E 1W0', verifiedOn: VERIFIED, pet: 'Pets welcome.', rv: 'RV sites with electrical hookups and sani-dump.', url: 'https://www.pillarlake.com/' },
       ]},
       { name: 'Vernon', note: 'Major branch point.', stays: [
-        { name: 'Best Western Pacific Inn', type: 'HOTEL', phone: '250-558-1800', verifiedOn: VERIFIED, pet: 'Pet-friendly rooms.', rv: 'Free onsite parking; confirm motorhome space when calling.', url: 'https://www.bestwestern.com/en_US/book/hotel-rooms.62133.html' },
+        { name: 'Best Western Pacific Inn', type: 'HOTEL', phone: '250-558-1800', address: '4790 34 Street, Vernon, BC V1T 5Y9', verifiedOn: VERIFIED, pet: 'Pet-friendly rooms.', rv: 'Official Best Western listing includes truck/RV parking.', url: 'https://www.bestwestern.com/en_US/book/hotel-rooms.62133.html' },
       ]},
       { name: 'Armstrong', note: 'Hwy 97A north branch.', stays: [
-        { name: 'Armstrong Kin RV Park', type: 'RV', phone: '250-546-4041', verifiedOn: VERIFIED, rv: '30/50 amp service and pull-through sites up to 80 ft.', url: 'https://www.armstrongkinrv.ca/' },
+        { name: 'Armstrong Kin RV Park', type: 'RV', phone: '250-546-4041', address: '3311 Park Drive, Armstrong, BC V0E 1B0', verifiedOn: VERIFIED, rv: '30/50 amp service and pull-through sites up to 80 ft.', url: 'https://www.armstrongkinrv.ca/' },
       ]},
       { name: 'Enderby', stays: [
-        { name: 'Riverside RV Park & Campground', type: 'RV', phone: '250-838-0155', verifiedOn: VERIFIED, pet: 'Dog friendly.', rv: 'Full-hookup and pull-through RV sites.', url: 'https://enderbycamping.com/' },
+        { name: 'Riverside RV Park & Campground', type: 'RV', phone: '250-838-0155', address: '112 Kildonan Avenue, Enderby, BC V4Y 4A7', verifiedOn: VERIFIED, pet: 'Dog friendly.', rv: 'Full-hookup and pull-through RV sites.', url: 'https://enderbycamping.com/' },
       ]},
       { name: 'Kelowna', note: 'Southbound continuation from Vernon.', stays: [
-        { name: 'Recreation Inn & Suites', type: 'HOTEL', phone: '250-860-3982', verifiedOn: VERIFIED, pet: 'Pet-friendly rooms; call for availability.', url: 'https://www.recreationinn.com/' },
+        { name: 'Recreation Inn & Suites', type: 'HOTEL', phone: '250-860-3982', address: '1891 Parkinson Way, Kelowna, BC V1Y 7V6', verifiedOn: VERIFIED, pet: 'Pet-friendly rooms; call for availability.', url: 'https://www.recreationinn.com/' },
       ]},
       { name: 'Osoyoos', note: 'Farther south fallback if Hwy 97 remains safe.', stays: [
-        { name: 'Nk’Mip RV Park & Campground', type: 'RV', phone: '250-495-7279', verifiedOn: VERIFIED, pet: 'Pets permitted under current campground rules.', rv: 'Large full-service RV destination; big rigs welcome.', url: 'https://campingosoyoos.com/' },
+        { name: 'Nk’Mip RV Park & Campground', type: 'RV', phone: '250-495-7279', address: '8000 45th Street, Osoyoos, BC', verifiedOn: VERIFIED, pet: 'Pets permitted under current campground rules.', rv: 'Large full-service RV destination; big rigs welcome.', url: 'https://campingosoyoos.com/' },
       ]},
     ],
   },
@@ -75,20 +76,20 @@ const routes: RoutePlan[] = [
     guidance: 'A geographically distinct northbound escape corridor.',
     towns: [
       { name: 'Barriere', stays: [
-        { name: 'Y-5 Motel & Campground', type: 'RV', phone: '250-672-9739', verifiedOn: VERIFIED, pet: 'Property testimonials reference guests travelling with pets.', rv: 'Updated pull-through campground with full hookups.', url: 'https://www.y5motel.com/' },
+        { name: 'Y-5 Motel & Campground', type: 'RV', phone: '250-672-9739', address: '4325 Southern Yellowhead Hwy, Barriere, BC V0E 1E0', verifiedOn: VERIFIED, pet: 'Current property material includes guests travelling with pets.', rv: 'Pull-through campground with full hookups.', url: 'https://www.y5motel.com/' },
       ]},
       { name: 'Little Fort', stays: [
-        { name: 'Fox & Maple RV Resort', type: 'RV', phone: '250-574-0024', verifiedOn: VERIFIED, pet: 'Dog park onsite.', rv: 'Full-service sites for larger RVs.', url: 'https://foxandmaple.ca/' },
+        { name: 'Fox & Maple RV Resort', type: 'RV', phone: '250-574-0024', address: '8919 Thuya Creek Road, Little Fort, BC V0E 2C0', verifiedOn: VERIFIED, pet: 'Dog park onsite.', rv: 'Full-service sites for larger RVs.', url: 'https://foxandmaple.ca/' },
       ]},
       { name: 'Clearwater', stays: [
-        { name: 'Quality Inn & Suites Clearwater', type: 'HOTEL', phone: '250-674-3080', verifiedOn: VERIFIED, pet: 'Pet-friendly designated rooms.', rv: 'Truck parking listed; confirm motorhome parking when calling.', url: 'https://www.choicehotels.com/en-ca/british-columbia/clearwater/quality-inn-hotels/cnb83' },
+        { name: 'Quality Inn & Suites Clearwater', type: 'HOTEL', phone: '250-674-3080', address: '360 Eden Road, Clearwater, BC V0E 1N1', verifiedOn: VERIFIED, pet: 'Pet-friendly designated rooms.', rv: 'Truck parking listed; confirm motorhome parking when calling.', url: 'https://www.choicehotels.com/en-ca/british-columbia/clearwater/quality-inn-hotels/cnb83' },
       ]},
       { name: 'Blue River', stays: [
-        { name: 'Blue River Campground', type: 'RV', phone: '778-668-7423', verifiedOn: VERIFIED, pet: 'Pets free at RV sites.', rv: 'Full-service sites and extra-long pull-throughs.', url: 'https://bluerivercampground.ca/' },
+        { name: 'Blue River Campground', type: 'RV', phone: '778-668-7423', address: '991 Blue River West Frontage Road, Blue River, BC V0E 1J0', verifiedOn: VERIFIED, pet: 'Pets free at RV sites.', rv: 'Full-service sites and extra-long pull-throughs.', url: 'https://bluerivercampground.ca/' },
       ]},
       { name: 'Tête Jaune Cache', note: 'Small junction community. No verified overnight fit for us here yet; use nearby Valemount if safe.', stays: [] },
       { name: 'Valemount', note: 'Practical accommodation fallback near Tête Jaune Cache.', stays: [
-        { name: 'Days Inn by Wyndham Valemount', type: 'HOTEL', phone: '250-383-1515', verifiedOn: VERIFIED, pet: 'Current Wyndham page lists the hotel as pet-friendly.', rv: 'Free parking listed; confirm motorhome space when calling.', url: 'https://www.wyndhamhotels.com/en-ca/days-inn/valemount-british-columbia/days-inn-valemount/overview' },
+        { name: 'Best Western Plus Valemount Inn & Suites', type: 'HOTEL', phone: '250-566-0086', address: '1950 Highway 5 S, Valemount, BC V0E 2Z0', verifiedOn: VERIFIED, pet: 'Pet-friendly rooms available.', rv: 'Official Best Western listing includes truck/RV parking.', url: 'https://www.bestwestern.com/en_US/book/valemount/hotel-rooms/best-western-plus-valemount-inn-suites/propertyCode.62120.html' },
       ]},
     ],
   },
@@ -98,22 +99,22 @@ const routes: RoutePlan[] = [
     guidance: 'Cariboo corridor. Hwy 97 continues north beyond Prince George toward Dawson Creek, Fort St. John and the Yukon.',
     towns: [
       { name: 'Cache Creek', stays: [
-        { name: 'Cache Creek Campground & RV Park', type: 'RV', phone: '604-226-5088', verifiedOn: VERIFIED, pet: 'Pets welcome.', rv: 'Full-service and pull-through sites.', url: 'https://cachecreekcampground.com/' },
+        { name: 'Cache Creek Campground & RV Park', type: 'RV', phone: '604-226-5088', address: '1621 Trans Canada Hwy, Cache Creek, BC V0K 1H0', verifiedOn: VERIFIED, pet: 'Pets welcome.', rv: 'Full-service and pull-through sites.', url: 'https://cachecreekcampground.com/' },
       ]},
       { name: 'Clinton', stays: [
-        { name: 'Clinton Pines RV Park & Campground', type: 'RV', phone: '250-459-0030', verifiedOn: VERIFIED, pet: 'Pet-friendly; pets free.', rv: 'Sites for trailers/RVs up to 40 ft; full-service sites available.', url: 'https://www.clintonpines.ca/' },
+        { name: 'Clinton Pines RV Park & Campground', type: 'RV', phone: '250-459-0030', address: '1204 Cariboo Avenue, Clinton, BC V0K 1K0', verifiedOn: VERIFIED, pet: 'Pet-friendly; pets free.', rv: 'Sites for trailers/RVs up to 40 ft; full-service sites available.', url: 'https://www.clintonpines.ca/' },
       ]},
       { name: '100 Mile House', stays: [
-        { name: 'Super 8 by Wyndham 100 Mile House', type: 'HOTEL', phone: '250-395-8888', verifiedOn: VERIFIED, pet: 'Pet-friendly hotel.', url: 'https://www.wyndhamhotels.com/en-ca/super-8/100-mile-house-british-columbia/super-8-one-hundred-mile-house/overview' },
+        { name: 'Super 8 by Wyndham 100 Mile House', type: 'HOTEL', phone: '250-395-8888', address: '989 Alder Avenue, 100 Mile House, BC V0K 2E0', verifiedOn: VERIFIED, pet: 'Pet-friendly hotel.', url: 'https://www.wyndhamhotels.com/en-ca/super-8/100-mile-house-british-columbia/super-8-one-hundred-mile-house/overview' },
       ]},
       { name: 'Williams Lake', stays: [
-        { name: 'Sandman Hotel & Suites Williams Lake', type: 'HOTEL', phone: '250-392-6557', verifiedOn: VERIFIED, pet: 'Pet-friendly rooms.', rv: 'Free parking listed; confirm motorhome fit when calling.', url: 'https://www.sandmanhotels.com/williams-lake' },
+        { name: 'Sandman Hotel & Suites Williams Lake', type: 'HOTEL', phone: '250-392-6557', address: '664 Oliver Street, Williams Lake, BC V2G 1M6', verifiedOn: VERIFIED, pet: 'Pet-friendly rooms.', rv: 'Free parking listed; confirm motorhome fit when calling.', url: 'https://www.sandmanhotels.com/williams-lake' },
       ]},
       { name: 'Quesnel', stays: [
-        { name: 'Quesnel Downtown RV Park & Campground', type: 'RV', phone: '250-983-4671', verifiedOn: VERIFIED, rv: 'Municipal campground with serviced RV sites.', url: 'https://www.quesnel.ca/arts-recreation/quesnel-downtown-rv-park-campground' },
+        { name: 'Quesnel Downtown RV Park & Campground', type: 'RV', phone: '250-983-4671', address: '21 Johnston Bridge Loop, Quesnel, BC', verifiedOn: VERIFIED, rv: 'Municipal campground with serviced RV sites.', note: 'Current tourism information notes a Johnston Bridge/Loop access detour; check current directions.', url: 'https://quesneldowntownrvpark.com/' },
       ]},
       { name: 'Prince George', stays: [
-        { name: 'Northern Experience RV Park & Campground', type: 'RV', phone: '250-963-7577', verifiedOn: VERIFIED, pet: 'Dog-friendly.', rv: 'Big-rig pull-throughs and full-service hookups.', url: 'https://www.northernexperiencerv.com/' },
+        { name: 'Northern Experience RV Park & Campground', type: 'RV', phone: '250-963-7577', address: '9180 Hwy 97 South, Prince George, BC V2N 6E2', verifiedOn: VERIFIED, pet: 'Dog-friendly.', rv: 'Big-rig pull-throughs and full-service hookups.', url: 'https://www.northernexperiencerv.com/' },
       ]},
     ],
   },
@@ -124,17 +125,17 @@ const routes: RoutePlan[] = [
     branchNote: 'The Lillooet–Pemberton section is steep and mountainous. Check DriveBC immediately before committing to this corridor.',
     towns: [
       { name: 'Cache Creek', stays: [
-        { name: 'Cache Creek Campground & RV Park', type: 'RV', phone: '604-226-5088', verifiedOn: VERIFIED, pet: 'Pets welcome.', rv: 'Full-service and pull-through sites.', url: 'https://cachecreekcampground.com/' },
+        { name: 'Cache Creek Campground & RV Park', type: 'RV', phone: '604-226-5088', address: '1621 Trans Canada Hwy, Cache Creek, BC V0K 1H0', verifiedOn: VERIFIED, pet: 'Pets welcome.', rv: 'Full-service and pull-through sites.', url: 'https://cachecreekcampground.com/' },
       ]},
       { name: 'Pavilion', note: 'Small transit community. No verified overnight accommodation/RV fit for us yet.', stays: [] },
       { name: 'Lillooet', stays: [
-        { name: 'Retasket Lodge & RV Park', type: 'RV', phone: '250-256-2090', verifiedOn: VERIFIED, rv: '20-room motel plus 8-site RV park.', url: 'https://www.retasketlodge.com/' },
+        { name: 'Retasket Lodge & RV Park', type: 'RV', phone: '250-256-2090', address: '1264 Bouvette Road, Lillooet, BC V0K 1V0', verifiedOn: VERIFIED, rv: '20-room motel plus 8-site RV park.', url: 'https://www.retasketlodge.com/' },
       ]},
       { name: 'Pemberton', stays: [
-        { name: 'Pemberton Valley Lodge', type: 'HOTEL', phone: '604-894-2000', verifiedOn: VERIFIED, pet: 'Dog-friendly accommodation is specifically offered.', url: 'https://www.pembertonvalleylodge.com/' },
+        { name: 'Pemberton Valley Lodge', type: 'HOTEL', phone: '604-894-2000', address: '1490 Sea-to-Sky Highway, Pemberton, BC', verifiedOn: VERIFIED, pet: 'Dog-friendly accommodation is specifically offered.', url: 'https://www.pembertonvalleylodge.com/' },
       ]},
       { name: 'Whistler', stays: [
-        { name: 'Whistler RV Park & Campground', type: 'RV', phone: '604-905-2523', verifiedOn: VERIFIED, pet: 'Pets welcome.', rv: 'RV sites of several sizes; confirm your exact motorhome length.', url: 'https://whistlerrvpark.com/' },
+        { name: 'Whistler RV Park & Campground', type: 'RV', phone: '604-905-2523', address: '55 Highway 99, Whistler, BC V0N 1B0', verifiedOn: VERIFIED, pet: 'Pets welcome.', rv: 'RV sites of several sizes; confirm your exact motorhome length.', url: 'https://whistlerrvpark.com/' },
       ]},
     ],
   },
@@ -145,10 +146,10 @@ const routes: RoutePlan[] = [
     branchNote: 'From Merritt, reassess toward Hope, Princeton/Southern Interior or another open corridor as directed.',
     towns: [
       { name: 'Merritt', stays: [
-        { name: 'Claybanks RV Park', type: 'RV', phone: '250-378-6441', verifiedOn: VERIFIED, pet: 'Leashed or kenneled pets welcome.', rv: 'Fully serviced sites suitable for RVs up to 65 ft long.', url: 'https://www.claybanksrv.ca/' },
+        { name: 'Claybanks RV Park', type: 'RV', phone: '250-378-6441', address: '1302 Voght Street, Merritt, BC V1K 1B8', verifiedOn: VERIFIED, pet: 'Leashed or kenneled pets welcome.', rv: 'Fully serviced sites suitable for RVs up to 65 ft long.', url: 'https://www.claybanksrv.ca/' },
       ]},
       { name: 'Hope', stays: [
-        { name: 'WildRose Campground & RV Park', type: 'RV', phone: '604-869-9842', verifiedOn: VERIFIED, pet: 'Pet-friendly campground; confirm current rules when calling.', rv: 'Year-round campground and RV park.', url: 'https://www.wildrosecamp.com/' },
+        { name: 'WildRose Campground & RV Park', type: 'RV', phone: '604-869-9842', address: '62030 Flood Hope Road, Hope, BC V0X 1L2', verifiedOn: VERIFIED, pet: 'Pet-friendly campground; confirm current rules when calling.', rv: 'Year-round campground and RV park.', url: 'https://www.wildrosecamp.com/' },
       ]},
     ],
   },
@@ -159,7 +160,7 @@ const routes: RoutePlan[] = [
     towns: [
       { name: 'Quilchena', note: 'Transit point. No verified Tucker + motorhome accommodation fit for us yet.', stays: [] },
       { name: 'Merritt', stays: [
-        { name: 'Claybanks RV Park', type: 'RV', phone: '250-378-6441', verifiedOn: VERIFIED, pet: 'Leashed or kenneled pets welcome.', rv: 'Fully serviced sites suitable for RVs up to 65 ft long.', url: 'https://www.claybanksrv.ca/' },
+        { name: 'Claybanks RV Park', type: 'RV', phone: '250-378-6441', address: '1302 Voght Street, Merritt, BC V1K 1B8', verifiedOn: VERIFIED, pet: 'Leashed or kenneled pets welcome.', rv: 'Fully serviced sites suitable for RVs up to 65 ft long.', url: 'https://www.claybanksrv.ca/' },
       ]},
     ],
   },
@@ -170,7 +171,7 @@ const routes: RoutePlan[] = [
     towns: [
       { name: 'Aspen Grove', note: 'Transit point. No verified Tucker + motorhome accommodation fit for us yet.', stays: [] },
       { name: 'Princeton', stays: [
-        { name: 'Princeton Municipal Campground & RV Park', type: 'RV', phone: '250-295-7355', verifiedOn: VERIFIED, pet: 'Pets allowed under current park rules.', rv: 'Tent, RV, trailer and motorhome sites; open year-round.', url: 'https://www.princeton.ca/p/princeton-municipal-campground-rv-park' },
+        { name: 'Princeton Municipal Campground & RV Park', type: 'RV', phone: '250-295-7355', address: '365 Highway 3 East, Princeton, BC V0X 1W0', verifiedOn: VERIFIED, pet: 'Pets allowed under current park rules.', rv: 'Tent, RV, trailer and motorhome sites; open year-round.', url: 'https://www.princeton.ca/p/princeton-municipal-campground-rv-park' },
       ]},
     ],
   },
@@ -222,27 +223,16 @@ export default function EvacuationPlan() {
         <div>
           <p className="evac-kicker">RN-FireSmart</p>
           <h1>Evacuation Decision Tree</h1>
-          <p>First get safely out of Dallas from Chukar Drive. Then choose the regional corridor responders direct us toward.</p>
+          <p>Choose the regional corridor emergency officials direct us toward, then use the verified stops along that corridor.</p>
         </div>
         <div className="evac-rule">The actual route is incident-specific. First-responder and Voyent Alert directions override this household plan.</div>
       </header>
 
       <main className="evac-main">
-        <section className="local-egress-panel">
-          <div className="layer-number">1</div>
-          <div>
-            <p className="evac-kicker">Dallas / Chukar Drive</p>
-            <h2>Get clear of Dallas first</h2>
-            <p>This household plan starts from Chukar Drive in Dallas.</p>
-            <div className="local-warning"><strong>Local rule:</strong> Use the route identified for Dallas by emergency officials. If an Evacuation Order is issued, follow first-responder or Voyent Alert directions.</div>
-          </div>
-          <a className="city-button" href="https://www.kamloops.ca/public-safety/emergency-management/emergency-preparedness" target="_blank" rel="noopener noreferrer">Kamloops evacuation guidance ↗</a>
-        </section>
-
         <section className="decision-panel">
           <div className="route-toolbar">
             <div>
-              <div className="layer-title"><span className="layer-number small">2</span><div><p className="evac-kicker">Regional corridor</p><h2>Once clear of the city, which direction is open?</h2></div></div>
+              <div className="layer-title"><div><p className="evac-kicker">Regional corridor</p><h2>Which direction is open?</h2></div></div>
               <p>These are preplanned options, not “the evacuation route.” Check current roads and follow the route identified by emergency officials.</p>
             </div>
             <a className="drivebc-button" href="https://www.drivebc.ca/" target="_blank" rel="noopener noreferrer">Check DriveBC ↗</a>
@@ -270,7 +260,7 @@ export default function EvacuationPlan() {
 
             <div className="evac-heading">
               <div><p className="evac-kicker">Stops along this corridor</p><h2>Where can we stop?</h2></div>
-              <p>Every accommodation below has a phone number verified on August 18, 2026. Yellow means we do not have a verified fit for us, or all known options have been marked Full/Unavailable.</p>
+              <p>Every listed accommodation has a current phone number and street address checked on August 18, 2026. Yellow means we do not have a verified fit for us, or all known options have been marked Full/Unavailable.</p>
             </div>
 
             <div className="town-stack">
@@ -290,8 +280,9 @@ export default function EvacuationPlan() {
                             <article className={`stay-card ${selectedStay === stay.name ? 'selected' : ''}`} key={stay.name}>
                               <div className="stay-header"><span className={`stay-type ${stay.type.toLowerCase()}`}>{stay.type === 'HOTEL' ? 'Hotel / motel' : 'RV / campground'}</span>{selectedStay === stay.name && <b>Selected</b>}</div>
                               <h3>{stay.name}</h3>
+                              <p className="stay-address"><strong>Address:</strong> {stay.address}</p>
                               <p className="verified-phone"><strong>Phone:</strong> <a href={`tel:${stay.phone.replace(/[^0-9+]/g, '')}`}>{stay.phone}</a></p>
-                              <p className="phone-verified">Verified {stay.verifiedOn}</p>
+                              <p className="phone-verified">Phone & address checked {stay.verifiedOn}</p>
                               {stay.pet && <p><strong>Tucker:</strong> {stay.pet}</p>}
                               {stay.rv && <p><strong>RV:</strong> {stay.rv}</p>}
                               {stay.note && <p>{stay.note}</p>}
@@ -306,7 +297,7 @@ export default function EvacuationPlan() {
                             </article>
                           ))}
                         </div>
-                      ) : <div className="verify-box"><strong>YELLOW — NO VERIFIED FIT YET.</strong> Continue to the next town or use the live searches below. We do not add a property here until its phone number and suitability are verified.</div>}
+                      ) : <div className="verify-box"><strong>YELLOW — NO VERIFIED FIT YET.</strong> Continue to the next town or use the live searches below. We do not add a property here until its current phone, street address and suitability are verified.</div>}
 
                       <div className="town-resources">
                         <a href={mapSearch(town.name, 'fuel')} target="_blank" rel="noopener noreferrer">Fuel ↗</a>
@@ -327,7 +318,7 @@ export default function EvacuationPlan() {
         {activeRoute && (
           <section className="selected-destination-panel">
             <div><p className="evac-kicker">Selected destination</p><h2>{selectedOption ? `${selectedOption.name} — ${selectedOption.town}` : 'No destination selected yet'}</h2></div>
-            <p>{selectedOption ? `Call ${selectedOption.phone} before relying on it. If unavailable, select another stop farther along the same safe corridor.` : 'Choose a verified accommodation card above once availability is confirmed.'}</p>
+            <p>{selectedOption ? `${selectedOption.address} · Call ${selectedOption.phone} before relying on it. If unavailable, select another stop farther along the same safe corridor.` : 'Choose a verified accommodation card above once availability is confirmed.'}</p>
           </section>
         )}
 

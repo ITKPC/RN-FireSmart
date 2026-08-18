@@ -6,13 +6,25 @@
 .vehicle-score { min-width: 230px; padding: 1rem 1.1rem; border: 1px solid rgba(255,255,255,.28); background: rgba(255,255,255,.12); border-radius: 1rem; }
 .vehicle-score span, .vehicle-score small { display: block; }
 .vehicle-score strong { display: block; font-size: 2.1rem; line-height: 1; margin: .2rem 0 .3rem; }
-.vehicle-main { width: min(1050px,calc(100% - 2rem)); margin: 1rem auto 4rem; }
+.vehicle-main { width: min(1100px,calc(100% - 2rem)); margin: 1rem auto 4rem; }
 .vehicle-panel { background: white; border: 1px solid #ddd5cb; border-radius: 1rem; padding: clamp(1rem,3vw,2rem); margin-bottom: 1rem; box-shadow: 0 8px 30px rgba(75,48,30,.06); }
 .vehicle-section-heading { display: flex; justify-content: space-between; gap: 2rem; align-items: flex-end; margin-bottom: 1rem; }
 .vehicle-section-heading h2, .vehicle-note-panel h2 { margin: .2rem 0 0; }
 .vehicle-section-heading > p { margin: 0; color: #6f675f; max-width: 32rem; line-height: 1.4; }
-.vehicle-progress { height: .6rem; background: #e8e5e1; border-radius: 999px; overflow: hidden; margin-bottom: 1rem; }
+.vehicle-button-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:.65rem; }
+.vehicle-select { border:1px solid #d8d0c6; background:#faf8f5; border-radius:.8rem; padding:.9rem; text-align:left; cursor:pointer; color:#2b2824; }
+.vehicle-select strong,.vehicle-select span { display:block; }
+.vehicle-select span { margin-top:.25rem; font-size:.78rem; color:#706860; }
+.vehicle-select.active { border-color:#51779a; box-shadow:0 0 0 2px rgba(81,119,154,.14); background:#f1f6fa; }
+.vehicle-decision-row { display:flex; flex-wrap:wrap; gap:.6rem; margin:1rem 0; }
+.vehicle-decision-row button { border:1px solid #cfc7bd; border-radius:999px; background:#f7f4f0; padding:.7rem 1rem; font-weight:800; cursor:pointer; }
+.vehicle-decision-row button.decision-active { background:#314b63; color:white; border-color:#314b63; }
+.vehicle-decision-row button.decision-active.coming { background:#326443; border-color:#326443; }
+.vehicle-decision-row button.decision-active.leaving { background:#7b4a33; border-color:#7b4a33; }
+.vehicle-undecided { padding:1rem; background:#fff4df; border:1px solid #efd6a5; border-radius:.8rem; line-height:1.45; }
+.vehicle-progress { height: .6rem; background: #e8e5e1; border-radius: 999px; overflow: hidden; margin:1rem 0 .35rem; }
 .vehicle-progress span { display: block; height: 100%; background: #3d7c50; border-radius: inherit; }
+.vehicle-progress-copy { color:#6f675f; font-size:.82rem; margin-bottom:1rem; }
 .vehicle-kit-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .6rem; }
 .vehicle-kit-row { display: flex; gap: .75rem; align-items: flex-start; padding: .85rem .95rem; background: #f7f5f1; border: 1px solid #e9e3da; border-radius: .75rem; line-height: 1.35; cursor: pointer; }
 .vehicle-kit-row input { margin-top: .15rem; width: 1.15rem; height: 1.15rem; accent-color: #3d7c50; }

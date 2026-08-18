@@ -194,7 +194,7 @@ export default function EvacuationPlan() {
         <div>
           <p className="evac-kicker">RN-FireSmart</p>
           <h1>Evacuation Decision Tree</h1>
-          <p>First get safely out of our Kamloops neighbourhood. Then choose the regional corridor responders direct us toward.</p>
+          <p>First get safely out of Dallas from Chukar Drive. Then choose the regional corridor responders direct us toward.</p>
         </div>
         <div className="evac-rule">The actual route is incident-specific. First-responder and Voyent Alert directions override this household plan.</div>
       </header>
@@ -203,12 +203,12 @@ export default function EvacuationPlan() {
         <section className="local-egress-panel">
           <div className="layer-number">1</div>
           <div>
-            <p className="evac-kicker">Local egress</p>
-            <h2>Get out of our neighbourhood first</h2>
-            <p>Kamloops emergency egress routes can be gated and may be opened only after responders determine they are safe. Do not self-select a gated emergency route.</p>
-            <div className="local-warning"><strong>RV rule:</strong> Do not assume a neighbourhood emergency egress road is suitable for the motorhome. Juniper Ridge familiarization drives specifically excluded recreational vehicles.</div>
+            <p className="evac-kicker">Dallas / Chukar Drive</p>
+            <h2>Get clear of Dallas first</h2>
+            <p>This household plan starts from Chukar Drive in Dallas. We do not need Juniper Ridge emergency-egress routes in our plan.</p>
+            <div className="local-warning"><strong>Local rule:</strong> Use the route identified for Dallas by emergency officials. If an Evacuation Order is issued, follow the directions provided by first responders or Voyent Alert rather than trying to choose a different neighbourhood exit.</div>
           </div>
-          <a className="city-button" href="https://www.kamloops.ca/public-safety/emergency-management/emergency-preparedness" target="_blank" rel="noopener noreferrer">Kamloops evacuation routes ↗</a>
+          <a className="city-button" href="https://www.kamloops.ca/public-safety/emergency-management/emergency-preparedness" target="_blank" rel="noopener noreferrer">Kamloops evacuation guidance ↗</a>
         </section>
 
         <section className="decision-panel">

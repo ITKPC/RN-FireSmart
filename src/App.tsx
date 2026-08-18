@@ -76,6 +76,7 @@ const defaultAssetStatus: Record<string, Status> = {
   power: 'Ready',
   boxes: 'Ready',
   documents: 'Ready',
+  keys: 'Ready',
   nancyE: 'Ready',
   nancyP: 'Ready',
   rickE: 'Ready',
@@ -137,6 +138,7 @@ const taskGroups: Record<Stage, TaskGroup[]> = {
       tasks: [
         'Move all six go boxes from the gym into the RV.',
         'Move the personal documents carry binder into the RV.',
+        'Grab the Vehicle & Recreation Key Set from the drawer and load it into the RV (boat, Sea-Doo, Marlin, BMW M2 and Ford F-150).',
         'Pack Nancy computer, hard drive, keyboard, mouse and associated power/cables into Nancy E-Duffle.',
         'Pack Rick electronics into Rick E-Duffle.',
         'Load each person’s E-Duffle and P-Duffle into the vehicle that person is driving.',
@@ -201,6 +203,7 @@ const assetDefinitions: { key: string; title: string; subtitle: string; options:
   { key: 'power', title: 'Power Depot', subtitle: 'Dedicated emergency power banks stored together and charged', options: ['Ready', 'Check', 'Not Ready'] },
   { key: 'boxes', title: '6 Go Boxes', subtitle: 'Gym → RV at Alert', options: ['Ready', 'Check', 'Not Ready', 'Loaded'] },
   { key: 'documents', title: 'Documents Binder', subtitle: 'Shared plastic carry binder → RV at Alert', options: ['Ready', 'Check', 'Not Ready', 'Loaded'] },
+  { key: 'keys', title: 'Vehicle & Recreation Key Set', subtitle: 'Drawer → RV at Alert • boat • Sea-Doo • Marlin • BMW M2 • Ford F-150', options: ['Ready', 'Check', 'Not Ready', 'Loaded'] },
   { key: 'tucker', title: 'Tucker', subtitle: 'Food • treats • leash • supplies • 14-day plan', options: ['Ready', 'Check', 'Not Ready', 'Loaded'] },
 ]
 
@@ -273,7 +276,7 @@ export default function App() {
   const totalTasks = stageTaskKeys.length
   const progress = totalTasks === 0 ? 0 : Math.round((doneCount / totalTasks) * 100)
 
-  const readinessKeys = ['rv', 'power', 'boxes', 'documents', 'tucker', 'nancyE', 'nancyP', 'rickE', 'rickP']
+  const readinessKeys = ['rv', 'power', 'boxes', 'documents', 'keys', 'tucker', 'nancyE', 'nancyP', 'rickE', 'rickP']
   const readyCount = readinessKeys.filter((key) => ['Ready', 'Loaded'].includes(statuses[key])).length
   const readinessPercent = Math.round((readyCount / readinessKeys.length) * 100)
   const blockers = readinessKeys.filter((key) => !['Ready', 'Loaded'].includes(statuses[key]))

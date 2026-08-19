@@ -53,6 +53,46 @@ const vancouverStays: StayOption[] = [
     rv: 'Hotel option for people + Tucker; do not assume motorhome parking. Use an RV park or separately confirmed RV parking for the motorhome.',
     url: 'https://www.bestwestern.com/en_US/book/vancouver/hotel-rooms/best-western-plus-sands/propertyCode.62025.html',
   },
+  {
+    name: 'Coast Coal Harbour Vancouver Hotel by APA',
+    type: 'HOTEL',
+    phone: '604-697-0202',
+    address: '1180 West Hastings Street, Vancouver, BC V6E 4R5',
+    verifiedOn: VERIFIED,
+    pet: 'Pet-friendly rooms are limited; pets must not be left unattended. Call before relying on availability.',
+    rv: 'Hotel option for people + Tucker. Do not assume motorhome parking; use a verified RV park or separately confirmed RV parking.',
+    url: 'https://www.coasthotels.com/coast-coal-harbour-vancouver-hotel-by-apa',
+  },
+  {
+    name: 'Pinnacle Hotel Harbourfront',
+    type: 'HOTEL',
+    phone: '604-689-9211',
+    address: '1133 West Hastings Street, Vancouver, BC V6E 3T3',
+    verifiedOn: VERIFIED,
+    pet: 'Pet-friendly rooms available; notify the hotel in advance so pet amenities can be confirmed.',
+    rv: 'Underground parking has a 6 ft maximum height. The motorhome cannot use hotel parking; use a verified RV park or separately confirmed RV parking.',
+    url: 'https://www.pinnacleharbourfronthotel.com/',
+  },
+  {
+    name: 'Century Plaza Hotel',
+    type: 'HOTEL',
+    phone: '604-687-0575',
+    address: '1015 Burrard Street, Vancouver, BC',
+    verifiedOn: VERIFIED,
+    pet: 'Dogs are accepted in designated pet-friendly rooms; confirm the room and current pet policy when calling.',
+    rv: 'Hotel option for people + Tucker. Do not assume motorhome parking.',
+    url: 'https://www.century-plaza.com/',
+  },
+  {
+    name: 'Hyatt Regency Vancouver',
+    type: 'HOTEL',
+    phone: '604-683-1234',
+    address: '655 Burrard Street, Vancouver, BC V6C 2R7',
+    verifiedOn: VERIFIED,
+    pet: 'Dog-friendly rooms. Tucker is within the current 50 lb single-dog limit; dogs cannot be left unattended.',
+    rv: 'Hotel option for people + Tucker. Do not assume motorhome parking.',
+    url: 'https://www.hyatt.com/hyatt-regency/en-US/yvrrv-hyatt-regency-vancouver',
+  },
 ]
 
 const routes: RoutePlan[] = [
@@ -238,6 +278,11 @@ function mapSearch(town: string, type: string) {
   return `https://www.openstreetmap.org/search?query=${encodeURIComponent(`${type} ${town} BC`)}`
 }
 
+function googlePetFriendlyHotels(town: string) {
+  const query = encodeURIComponent(`Hotels in ${town}, BC`).replace(/%20/g, '+')
+  return `https://www.google.ca/maps/search/${query}/data=!4m4!2m3!5m1!13e8!6e3?entry=ttu`
+}
+
 export default function EvacuationPlan() {
   const [selectedRoute, setSelectedRoute] = useState<RouteId | null>(readRoute)
   const [selectedStay, setSelectedStay] = useState(() => localStorage.getItem('rn-firesmart-selected-destination') || '')
@@ -310,7 +355,7 @@ export default function EvacuationPlan() {
 
             <div className="evac-heading">
               <div><p className="evac-kicker">Stops along this corridor</p><h2>Where can we stop?</h2></div>
-              <p>Every listed accommodation has a current phone number and street address checked on August 18, 2026. Yellow means we do not have a verified fit for us, or all known options have been marked Full/Unavailable.</p>
+              <p>Every listed accommodation has a current phone number and street address checked on August 18, 2026. Each town also has a live Google Maps pet-friendly hotel search for use when the verified list is full or circumstances change.</p>
             </div>
 
             <div className="town-stack">
@@ -324,6 +369,8 @@ export default function EvacuationPlan() {
                     </summary>
                     <div className="town-content">
                       {town.note && <p className="town-note">{town.note}</p>}
+                      <a className="primary-action" href={googlePetFriendlyHotels(town.name)} target="_blank" rel="noopener noreferrer">LIVE PET-FRIENDLY HOTELS — GOOGLE MAPS ↗</a>
+                      <p className="ess-town-note">Opens Google Maps for {town.name} with the pet-friendly hotel filter already selected. Use this when our verified choices are full, unavailable or no longer practical.</p>
                       {town.stays.length > 0 ? (
                         <div className="stay-grid">
                           {town.stays.map((stay) => (
@@ -347,7 +394,7 @@ export default function EvacuationPlan() {
                             </article>
                           ))}
                         </div>
-                      ) : <div className="verify-box"><strong>YELLOW — NO VERIFIED FIT YET.</strong> Continue to the next town or use the live searches below. We do not add a property here until its current phone, street address and suitability are verified.</div>}
+                      ) : <div className="verify-box"><strong>YELLOW — NO VERIFIED FIT YET.</strong> Use the live pet-friendly Google Maps search above or continue to the next town. We do not add a property to the verified list until its current phone, street address and suitability are checked.</div>}
 
                       <div className="town-resources">
                         <a href={mapSearch(town.name, 'fuel')} target="_blank" rel="noopener noreferrer">Fuel ↗</a>
@@ -368,7 +415,7 @@ export default function EvacuationPlan() {
         {activeRoute && (
           <section className="selected-destination-panel">
             <div><p className="evac-kicker">Selected destination</p><h2>{selectedOption ? `${selectedOption.name} — ${selectedOption.town}` : 'No destination selected yet'}</h2></div>
-            <p>{selectedOption ? `${selectedOption.address} · Call ${selectedOption.phone} before relying on it. If unavailable, select another stop farther along the same safe corridor.` : 'Choose a verified accommodation card above once availability is confirmed.'}</p>
+            <p>{selectedOption ? `${selectedOption.address} · Call ${selectedOption.phone} before relying on it. If unavailable, select another stop farther along the same safe corridor or use that town’s live pet-friendly Google Maps search.` : 'Choose a verified accommodation card above once availability is confirmed.'}</p>
           </section>
         )}
 

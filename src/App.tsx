@@ -149,6 +149,9 @@ const taskGroups: Record<Stage, TaskGroup[]> = {
     {
       title: 'Final home actions — only while there is time',
       tasks: [
+        'Open the blinds.',
+        'Turn off the garage door opener.',
+        'Open the side gate.',
         'Check exterior, foundation and roof vents for obvious ember-entry problems; use temporary non-combustible covering only where appropriate and remember it must be removed on return.',
         'Move easily ignited cardboard or similar material away from attic or crawl-space vents where accessible.',
         'Before leaving, turn off air conditioning.',

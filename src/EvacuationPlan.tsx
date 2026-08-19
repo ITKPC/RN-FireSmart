@@ -153,8 +153,8 @@ const routes: RoutePlan[] = [
   },
   {
     id: 'WEST_WHISTLER', shortName: 'West / Whistler back route', highway: 'Hwy 1 / Hwy 99',
-    corridor: 'Kamloops → Cache Creek → Pavilion → Lillooet → Duffey Lake Road → Pemberton → Whistler → Vancouver',
-    guidance: 'A distinct west/southwest corridor. Treat Duffey Lake Road as an alternate for the motorhome, not a preferred RV route. If the corridor remains open, Hwy 99 continues south from Whistler into Metro Vancouver.',
+    corridor: 'Kamloops → Cache Creek → Pavilion → Lillooet → Duffey Lake Road → Pemberton → Whistler → Squamish → North Vancouver → Vancouver',
+    guidance: 'A distinct west/southwest corridor. Treat Duffey Lake Road as an alternate for the motorhome, not a preferred RV route. If the corridor remains open, Hwy 99 continues south from Whistler through Squamish and the North Shore into Vancouver.',
     branchNote: 'The Lillooet–Pemberton section is steep and mountainous. Check DriveBC immediately before committing to this corridor.',
     towns: [
       { name: 'Cache Creek', stays: [
@@ -170,13 +170,19 @@ const routes: RoutePlan[] = [
       { name: 'Whistler', stays: [
         { name: 'Whistler RV Park & Campground', type: 'RV', phone: '604-905-2523', address: '55 Highway 99, Whistler, BC V0N 1B0', verifiedOn: VERIFIED, pet: 'Pets welcome.', rv: 'RV sites of several sizes; confirm your exact motorhome length.', url: 'https://whistlerrvpark.com/' },
       ]},
+      { name: 'Squamish', note: 'Direct Hwy 99 stop south of Whistler.', stays: [
+        { name: 'Sandman Hotel & Suites Squamish', type: 'HOTEL', phone: '604-848-6000', address: '39400 Discovery Way, Squamish, BC V8B 0R5', verifiedOn: VERIFIED, pet: 'Pet-friendly suites; current policy allows up to two pets.', rv: 'Hotel option for people + Tucker. Confirm motorhome parking before relying on the property for the RV.', url: 'https://www.sandmanhotels.com/squamish' },
+      ]},
+      { name: 'North Vancouver', note: 'Direct North Shore stop before Vancouver.', stays: [
+        { name: 'Pinnacle Hotel at the Pier', type: 'HOTEL', phone: '604-986-7437', address: '138 Victory Ship Way, North Vancouver, BC V7L 0B1', verifiedOn: VERIFIED, pet: 'Pet-friendly hotel; current hotel FAQ confirms pet stays.', rv: 'Underground hotel parking has a 6 ft 8 in height limit, so the motorhome cannot use it. Use Capilano River RV Park or separately confirmed RV parking.', url: 'https://pinnaclepierhotel.com/' },
+      ]},
       { name: 'Vancouver', note: 'Metro Vancouver destination after Whistler. Capilano River RV Park is the most direct RV option from the Hwy 99/North Shore approach.', stays: vancouverStays },
     ],
   },
   {
     id: 'SOUTH', shortName: 'South', highway: 'Hwy 5 / Hwy 1',
-    corridor: 'Kamloops → Merritt → Hope → Vancouver',
-    guidance: 'Coquihalla southbound corridor. Merritt is a major branching point; if the corridor remains open, continue west from Hope toward Vancouver.',
+    corridor: 'Kamloops → Merritt → Hope → Chilliwack → Abbotsford → Langley → Vancouver',
+    guidance: 'Coquihalla southbound corridor. Merritt is a major branching point; if the corridor remains open, continue west from Hope along Hwy 1 through the Fraser Valley toward Vancouver.',
     branchNote: 'From Merritt, reassess toward Hope/Vancouver, Princeton/Southern Interior or another open corridor as directed.',
     towns: [
       { name: 'Merritt', stays: [
@@ -184,6 +190,15 @@ const routes: RoutePlan[] = [
       ]},
       { name: 'Hope', stays: [
         { name: 'WildRose Campground & RV Park', type: 'RV', phone: '604-869-9842', address: '62030 Flood Hope Road, Hope, BC V0X 1L2', verifiedOn: VERIFIED, pet: 'Pet-friendly campground; confirm current rules when calling.', rv: 'Year-round campground and RV park.', url: 'https://www.wildrosecamp.com/' },
+      ]},
+      { name: 'Chilliwack', note: 'Direct Hwy 1 stop west of Hope.', stays: [
+        { name: 'Hampton Inn by Hilton Chilliwack', type: 'HOTEL', phone: '604-392-4667', address: '8050 Lickman Road, Chilliwack, BC V2R 0Y3', verifiedOn: VERIFIED, pet: 'Pet-friendly; current Hilton policy allows up to two dogs or cats and lists a 75 lb maximum.', rv: 'Complimentary onsite parking is listed, but confirm motorhome parking before relying on it.', url: 'https://www.hilton.com/en/hotels/ycwlrhx-hampton-chilliwack/' },
+      ]},
+      { name: 'Abbotsford', note: 'Direct Hwy 1 Fraser Valley stop.', stays: [
+        { name: 'Sandman Hotel Abbotsford Airport', type: 'HOTEL', phone: '604-859-7263', address: '3010 Mt Lehman Road, Abbotsford, BC V4X 2L4', verifiedOn: VERIFIED, pet: 'Designated pet-friendly rooms; current policy allows up to two pets.', rv: 'Complimentary parking is listed. Confirm motorhome fit before relying on the hotel for RV parking.', url: 'https://www.sandmanhotels.com/abbotsford-airport' },
+      ]},
+      { name: 'Langley', note: 'Direct Hwy 1 stop before Metro Vancouver.', stays: [
+        { name: 'Sandman Hotel Langley', type: 'HOTEL', phone: '604-888-7263', address: '8855 202nd Street, Langley, BC V1M 2N9', verifiedOn: VERIFIED, pet: 'Pet-friendly rooms; current policy allows up to two pets.', rv: 'Free onsite parking is listed, but confirm motorhome parking before relying on it.', url: 'https://www.sandmanhotels.com/langley' },
       ]},
       { name: 'Vancouver', note: 'Metro Vancouver destination after Hope. Burnaby Cariboo RV Park is convenient from the Hwy 1 east approach.', stays: vancouverStays },
     ],

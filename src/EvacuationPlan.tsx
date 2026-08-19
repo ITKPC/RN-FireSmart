@@ -22,6 +22,39 @@ type RoutePlan = { id: RouteId; shortName: string; highway: string; corridor: st
 
 const VERIFIED = '2026-08-18'
 
+const vancouverStays: StayOption[] = [
+  {
+    name: 'Burnaby Cariboo RV Park & Campground',
+    type: 'RV',
+    phone: '604-420-1722',
+    address: '8765 Cariboo Place, Burnaby, BC V3N 4T2',
+    verifiedOn: VERIFIED,
+    pet: 'Pets welcome in the RV park; Tucker must remain leashed and supervised.',
+    rv: 'Full-hookup sites; Destination Vancouver lists accommodation for any size motorhome. Convenient from the Hwy 1 east approach.',
+    url: 'https://bcrvpark.com/',
+  },
+  {
+    name: 'Capilano River RV Park',
+    type: 'RV',
+    phone: '604-987-4722',
+    address: '295 Tomahawk Avenue, West Vancouver, BC V7P 1C5',
+    verifiedOn: VERIFIED,
+    pet: 'Pet-friendly RV park with dog-walking areas.',
+    rv: 'Full-service RV sites. Particularly convenient from Whistler/Hwy 99. Entrance clearance is 13 ft 6 in; confirm motorhome height and current RV-age rules when calling.',
+    url: 'https://www.capilanoriverrvpark.com/',
+  },
+  {
+    name: 'Best Western Plus Sands',
+    type: 'HOTEL',
+    phone: '604-682-1831',
+    address: '1755 Davie Street, Vancouver, BC V6G 1W5',
+    verifiedOn: VERIFIED,
+    pet: 'Pet-friendly rooms allow up to two dogs, subject to room availability.',
+    rv: 'Hotel option for people + Tucker; do not assume motorhome parking. Use an RV park or separately confirmed RV parking for the motorhome.',
+    url: 'https://www.bestwestern.com/en_US/book/vancouver/hotel-rooms/best-western-plus-sands/propertyCode.62025.html',
+  },
+]
+
 const routes: RoutePlan[] = [
   {
     id: 'EAST', shortName: 'East', highway: 'Hwy 1',
@@ -120,8 +153,8 @@ const routes: RoutePlan[] = [
   },
   {
     id: 'WEST_WHISTLER', shortName: 'West / Whistler back route', highway: 'Hwy 1 / Hwy 99',
-    corridor: 'Kamloops → Cache Creek → Pavilion → Lillooet → Duffey Lake Road → Pemberton → Whistler',
-    guidance: 'A distinct west/southwest corridor. Treat Duffey Lake Road as an alternate for the motorhome, not a preferred RV route.',
+    corridor: 'Kamloops → Cache Creek → Pavilion → Lillooet → Duffey Lake Road → Pemberton → Whistler → Vancouver',
+    guidance: 'A distinct west/southwest corridor. Treat Duffey Lake Road as an alternate for the motorhome, not a preferred RV route. If the corridor remains open, Hwy 99 continues south from Whistler into Metro Vancouver.',
     branchNote: 'The Lillooet–Pemberton section is steep and mountainous. Check DriveBC immediately before committing to this corridor.',
     towns: [
       { name: 'Cache Creek', stays: [
@@ -137,13 +170,14 @@ const routes: RoutePlan[] = [
       { name: 'Whistler', stays: [
         { name: 'Whistler RV Park & Campground', type: 'RV', phone: '604-905-2523', address: '55 Highway 99, Whistler, BC V0N 1B0', verifiedOn: VERIFIED, pet: 'Pets welcome.', rv: 'RV sites of several sizes; confirm your exact motorhome length.', url: 'https://whistlerrvpark.com/' },
       ]},
+      { name: 'Vancouver', note: 'Metro Vancouver destination after Whistler. Capilano River RV Park is the most direct RV option from the Hwy 99/North Shore approach.', stays: vancouverStays },
     ],
   },
   {
-    id: 'SOUTH', shortName: 'South', highway: 'Hwy 5',
-    corridor: 'Kamloops → Merritt → Hope',
-    guidance: 'Coquihalla southbound corridor. Merritt is a major branching point; south does not require continuing all the way to Hope.',
-    branchNote: 'From Merritt, reassess toward Hope, Princeton/Southern Interior or another open corridor as directed.',
+    id: 'SOUTH', shortName: 'South', highway: 'Hwy 5 / Hwy 1',
+    corridor: 'Kamloops → Merritt → Hope → Vancouver',
+    guidance: 'Coquihalla southbound corridor. Merritt is a major branching point; if the corridor remains open, continue west from Hope toward Vancouver.',
+    branchNote: 'From Merritt, reassess toward Hope/Vancouver, Princeton/Southern Interior or another open corridor as directed.',
     towns: [
       { name: 'Merritt', stays: [
         { name: 'Claybanks RV Park', type: 'RV', phone: '250-378-6441', address: '1302 Voght Street, Merritt, BC V1K 1B8', verifiedOn: VERIFIED, pet: 'Leashed or kenneled pets welcome.', rv: 'Fully serviced sites suitable for RVs up to 65 ft long.', url: 'https://www.claybanksrv.ca/' },
@@ -151,6 +185,7 @@ const routes: RoutePlan[] = [
       { name: 'Hope', stays: [
         { name: 'WildRose Campground & RV Park', type: 'RV', phone: '604-869-9842', address: '62030 Flood Hope Road, Hope, BC V0X 1L2', verifiedOn: VERIFIED, pet: 'Pet-friendly campground; confirm current rules when calling.', rv: 'Year-round campground and RV park.', url: 'https://www.wildrosecamp.com/' },
       ]},
+      { name: 'Vancouver', note: 'Metro Vancouver destination after Hope. Burnaby Cariboo RV Park is convenient from the Hwy 1 east approach.', stays: vancouverStays },
     ],
   },
   {

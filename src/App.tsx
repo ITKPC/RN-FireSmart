@@ -139,6 +139,7 @@ const taskGroups: Record<Stage, TaskGroup[]> = {
         'Move all six go boxes from the gym into the RV.',
         'Move the personal documents carry binder into the RV.',
         'Grab the Vehicle & Recreation Key Set from the drawer and load it into the RV (boat, Sea-Doo, Marlin, BMW M2 and Ford F-150).',
+        'Load both e-bikes and their locks onto the rear of the RV.',
         'Pack Nancy computer, hard drive, keyboard, mouse and associated power/cables into Nancy E-Duffle.',
         'Pack Rick electronics into Rick E-Duffle.',
         'Load each person’s E-Duffle and P-Duffle into the vehicle that person is driving.',

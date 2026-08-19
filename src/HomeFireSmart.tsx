@@ -95,7 +95,8 @@ const alertActions = [
   'Open the blinds.',
   'Move patio furniture, mats, cushions and other exterior combustibles inside or away from the house if time is safe.',
   'Connect garden hoses and fill available large water containers if time is safe; do not remain to operate them after an Order.',
-  'Disconnect the automatic garage opener so the door can be operated manually if power fails.',
+  'Turn off the garage door opener.',
+  'Open the side gate.',
   'Keep ESS profile and accommodation information accessible.',
   'Monitor official instructions and stop property work immediately if conditions worsen.',
 ]

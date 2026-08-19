@@ -76,15 +76,28 @@ const priorityActions: PriorityAction[] = [
   { id: 'p-upgrades', title: 'Use wildfire-resilient materials at normal replacement', why: 'Roof, siding, windows and fence interfaces matter under ember, radiant and flame exposure.', implementation: 'Specify a listed Class A roof assembly, non-combustible/ignition-resistant siding, multi-pane windows with exterior tempered pane, and non-combustible fence/deck interfaces when replacement is justified.', effectiveness: 'High', cost: 'High' },
 ]
 
+const elevatedActions = [
+  'RV is fully departure-ready before an Evacuation Alert: fuel, propane, water, power and sleeping readiness checked.',
+  'SUV is fuelled and ready.',
+  'Load RV dry goods and the 14-day food/consumables plan.',
+  'Verify Tucker food, water and supplies for the 14-day standard.',
+  'Charge and stage power banks and other Power Depot equipment.',
+  'Locate documents, passports, medications and current-use office electronics so nothing has to be searched for later.',
+  'Verify Nancy and Rick E-/P-Duffles are ready for final current-use items.',
+  'Resolve any missing Go Box or document-location exceptions while there is still time.',
+]
+
 const alertActions = [
-  'Fuel and make RV + SUV departure-ready; do not wait for an Order.',
-  'Load Tucker kit, medications, documents, E-/P-Duffles and current-use essentials.',
+  'RV should already be departure-ready. Do not start RV preparation now.',
+  'Move the six Go Boxes from the gym into the RV.',
+  'Move the Personal Documents Binder into the RV.',
+  'Load current-use electronics, medications and remaining Tucker/current-use items.',
+  'Open the blinds.',
   'Move patio furniture, mats, cushions and other exterior combustibles inside or away from the house if time is safe.',
-  'Connect garden hoses and fill available large water containers; do not plan to remain and operate them after an Order.',
-  'Remove readily combustible window treatments if there is ample safe time.',
+  'Connect garden hoses and fill available large water containers if time is safe; do not remain to operate them after an Order.',
   'Disconnect the automatic garage opener so the door can be operated manually if power fails.',
   'Keep ESS profile and accommodation information accessible.',
-  'Monitor official instructions and stop property work if conditions worsen.',
+  'Monitor official instructions and stop property work immediately if conditions worsen.',
 ]
 
 const orderActions = [
@@ -193,7 +206,8 @@ export default function HomeFireSmart() {
       </section>
 
       <section className="wildfire-timing-grid">
-        <article className="timing-card alert-card"><p className="home-kicker">Evacuation Alert / safe preparation time</p><h2>Prepare early</h2>{alertActions.map((item) => <div className="timing-item" key={item}>{item}</div>)}</article>
+        <article className="timing-card elevated-card"><p className="home-kicker">Elevated Readiness / before Alert</p><h2>Make departure readiness real</h2>{elevatedActions.map((item) => <div className="timing-item" key={item}>{item}</div>)}</article>
+        <article className="timing-card alert-card"><p className="home-kicker">Evacuation Alert</p><h2>Final loading + house closeout</h2>{alertActions.map((item) => <div className="timing-item" key={item}>{item}</div>)}</article>
         <article className="timing-card order-card"><p className="home-kicker">Evacuation Order / danger escalating</p><h2>Stop work and leave</h2>{orderActions.map((item) => <div className="timing-item" key={item}>{item}</div>)}</article>
       </section>
 
